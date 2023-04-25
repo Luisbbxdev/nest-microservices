@@ -14,7 +14,7 @@ import { AppService } from './app.service';
         name: 'ANALYTICS',
         transport: Transport.TCP,
         options: {
-          port: 3001,
+          port: 3005,
         },
       },
     ]),

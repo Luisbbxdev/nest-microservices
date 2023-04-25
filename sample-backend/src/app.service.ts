@@ -13,14 +13,15 @@ export class AppService {
   ) {}
 
   getHello(): string {
-    return 'Hello World!';
+    return 'Hello World MAIN';
   }
 
   async createUser(request: createUserDto) {
     this.users.push(request);
     this.communicationClient.emit(
       'user_created',
-      new CreateUserEvent(request.email),
+      //new CreateUserEvent(request.email),
+      request.email,
     );
     this.analyticsClient.emit(
       'user_created',
@@ -29,6 +30,6 @@ export class AppService {
   }
 
   async getAnalytics() {
-    return this.analyticsClient.send({ cmd: 'get_analytics' }, {});
+    return this.analyticsClient.send({ cmd: 'get_analytics' }, {}); //retorna observable
   }
 }

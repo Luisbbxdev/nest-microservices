@@ -6,7 +6,8 @@ export class AppService {
   private readonly analytics: any[] = [];
 
   getHello(): string {
-    return 'Hello World!';
+    console.log('hellooooooooooooooo');
+    return 'Hello World analytics';
   }
 
   handleUserCreated(data: CreateUserEvent) {
